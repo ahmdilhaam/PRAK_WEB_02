@@ -4,44 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" href="logo.jpg">
+    <link rel="icon" href="assets/img/logo.jpg">
     <title>Ayo Belanja</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div style="width: 90%; margin-left: 2.5%;">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Tentang Kami</a></li>
-            <li><a href="#promosi">Promosi</a></li>
-            <li><a href="#cabang">Cabang</a></li>
+    <div class="container">
+        <ul class="menu">
+            <li><a href="#home" onclick="set_menu('home')">Home</a></li>
+            <li><a href="#promosi"onclick="set_menu('promosi')">Promosi</a></li>
+            <li><a href="#about" onclick="set_menu('about')">Tentang Kami</a></li>
+            <li><a href="#cabang" onclick="set_menu('cabang')">Cabang</a></li>
         </ul>
         <br>
-        <div id="home">
-            <center>
-                <div class="container">
-                    <img src="header.jpg" width="500">
-                    <div class="centered">
-                        <h1>SparePart-KU</h1>
-                    </div>
+        <div class="all-section" id="home">
+            <div class="header">
+                <img class="header-image" src="assets/img/header.jpg">
+                <div class="centered">
+                    <h1 class="fs-60">SparePart-<strong class="ku-text">KU</strong></h1>
                 </div>
-                <h1>"SPARE PART TERMURAH DAN TERBAIK ADA DISINI"</h1>
+            </div>
+            <center>
+                <h1 class="fs-60 border-solid">"SPARE PART TERMURAH DAN TERBAIK ADA DISINI"</h1>
             </center>
         </div>
-        <hr>
-        <div id="about">
-            <center>
-                <h3>Deskripsi</h3> 
-            </center>
-            <p>
+        <div class="all-section" id="cabang">
+            <span class="font-weight-bold">Alamat</span> :
+            <table>
+                <tr>
+                    <td>Toko Pusat (Jakarta)</td>
+                    <td>:</td>
+                    <td>Jl. Merdeka Raya No. 123, Gedung Perjuangan, Jakarta Raya (021 111 222 333)</td>
+                </tr>
+                <tr>
+                    <td>Toko Cabang (Jogja)</td>
+                    <td>:</td>
+                    <td>Keraton Selatan, Bantul, D.I. Yogyakarta (021 222 111 333)</td>
+                </tr>
+                <tr>
+                    <td>Toko Cabang (Bali)</td>
+                    <td>:</td>
+                    <td>Pantai Uluwatu No. 789, Bali Selatan, Bali (021 111 333 222)</td>
+                </tr>
+                <tr>
+                    <td>Toko Cabang (Semarang)</td>
+                    <td>:</td>
+                    <td>Gedung Joeang No. 1, Semarang, Jawa Tengah (021 333 222 111)</td>
+                </tr>
+            </table>
+        </div>
+        <div class="all-section" id="about">
+            <p class="about-content">
                 SparePart-KU adalah pusat penjualan spare part untuk kendaraan terlengkap di Indonesia.<br>
                 Kami terus berusaha agar selalu menyediakan spare part terbaik dan termurah untuk rakyat Indonesia.
             </p>
         </div>
-        <hr>
-        <div id="promosi">
-            <center>
-                <h3>Promosi:</h3> 
-            </center>
+        <div class="all-section" id="promosi">
             <table width="70%" border="1" align="center">
                 <thead>
                     <tr>
@@ -84,7 +103,7 @@
                         <td>Rp. 129.000</td>
                         <td>1-2 Hari</td>
                         <td>Cash</td>
-                        <td>Lampu Depan dan Lampu Ram< terbaik untuk kendaran anda</td>
+                        <td>Lampu Depan dan Lampu Rem terbaik untuk kendaran anda</td>
                     </tr>
                     <tr>
                         <td>1.</td>
@@ -97,34 +116,24 @@
                 </tbody>
             </table>
         </div>
-        <hr>
-        <div id="cabang">
-            <center>
-                <h3>Alamat Kantor Pusat dan Cabang</h3>
-            </center>
-            <table>
-                <tr>
-                    <td>Toko Pusat (Jakarta)</td>
-                    <td>:</td>
-                    <td>Jl. Merdeka Raya No. 123, Gedung Perjuangan, Jakarta Raya (021 111 222 333)</td>
-                </tr>
-                <tr>
-                    <td>Toko Cabang (Jogja)</td>
-                    <td>:</td>
-                    <td>Keraton Selatan, Bantul, D.I. Yogyakarta (021 222 111 333)</td>
-                </tr>
-                <tr>
-                    <td>Toko Cabang (Bali)</td>
-                    <td>:</td>
-                    <td>Pantai Uluwatu No. 789, Bali Selatan, Bali (021 111 333 222)</td>
-                </tr>
-                <tr>
-                    <td>Toko Cabang (Semarang)</td>
-                    <td>:</td>
-                    <td>Gedung Joeang No. 1, Semarang, Jawa Tengah (021 333 222 111)</td>
-                </tr>
-            </table>
-        </div>
     </div>
+
+    <script>
+        (function() {
+            let type = window.location.hash.substr(1) || 'home';
+            set_menu(type)
+        })();
+
+        function set_menu(val) {
+            let all_section = document.getElementsByClassName("all-section");
+            for (const key in all_section) {
+                if (all_section.hasOwnProperty(key)) {
+                    all_section[key].style.display = "none";
+                }
+            }
+
+            document.querySelector(`#${val}`).style.display = "";
+        }
+    </script>
 </body>
 </html>
