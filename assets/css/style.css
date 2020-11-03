@@ -1,0 +1,101 @@
+html * {
+    font-family: Calibri !important;
+}
+
+body {
+    background-image: url('../img/bg.jpg');
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+}
+
+.container {
+    width: 90%;
+    margin-left: 2.5%;
+}
+
+.about-content {
+    max-width: 700px;
+    margin: 0;
+}
+
+.fs-60 {
+    font-size: 60px;
+}
+
+.border-solid {
+    border: solid;
+}
+
+.ku-text {
+    color: black;
+    font-style: italic;
+}
+
+.font-weight-bold {
+    font-weight: 700;
+}
+
+.header {
+    position: relative;
+    text-align: center;
+    color: white;
+    background-color: #49a5b1;
+}
+
+.header-image {
+    width: 800px;
+    animation: hideandshow 4s;
+}
+
+@keyframes hideandshow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.centered {
+    position: absolute;
+    top: 20%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 460px;
+}
+
+ul.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #49a5b0;
+    width: 100%;
+}
+
+ul.menu li {
+    float: left;    
+}
+
+ul.menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    line-height: normal;
+    padding: 16px;
+    text-decoration: none;
+    transition: background-color 0.7s;
+    -moz-transition: background-color 0.7s;
+    -webkit-transition: background-color 0.7s;
+    -o-transition: background-color 0.7s;
+}
+
+ul.menu li a:hover {
+    background-color: #aaa;
+}
